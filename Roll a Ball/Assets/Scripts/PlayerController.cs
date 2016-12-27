@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour {
 		rb.AddForce (movement * speed);
 
 		if (Input.GetKey (KeyCode.Space) && allowJump) {
-			rb.AddForce (new Vector3 (0, 250, 0));
+			rb.AddForce (new Vector3 (0, 300, 0));
 			allowJump = false;
 		}
 	}
