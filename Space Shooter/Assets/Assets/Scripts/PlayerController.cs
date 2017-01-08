@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour {
 			Instantiate (shot, shotSpawn_mid.position, shotSpawn_mid.rotation); 
 			Instantiate (shot, shotSpawn_left.position, Quaternion.Euler (shotSpawn_left.rotation.x, -40f, shotSpawn_left.rotation.z)); 
 			Instantiate (shot, shotSpawn_right.position, Quaternion.Euler (shotSpawn_right.rotation.x, 40f, shotSpawn_right.rotation.z));
+			gameObject.GetComponent<AudioSource>().Play();
 		}
 	}
 
