@@ -25,8 +25,18 @@ public class TankHealth : MonoBehaviour
         m_ExplosionParticles.gameObject.SetActive(false);
     }
 
+	void OnTriggerEnter(Collider other)
+	{
+		if (other.CompareTag ("HealthBoost")) {
+			if (m_CurrentHealth != 100) {
+				m_CurrentHealth = 100;
+				SetHealthUI ();
+				other.gameObject.SetActive (false);
+			}
+		}
+	}
 
-    private void OnEnable()
+	private void OnEnable()
     {
         m_CurrentHealth = m_StartingHealth;
         m_Dead = false;
